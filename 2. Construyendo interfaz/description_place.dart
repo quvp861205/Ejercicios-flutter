@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:platzi_trips_app/review.dart';
 
 class DescriptionPlace extends StatelessWidget {
 
@@ -97,7 +98,8 @@ class DescriptionPlace extends StatelessWidget {
     return Column(
       children: <Widget>[
         title_stars,
-        description
+        description,
+        new Review("assets/img/avatar.png"),
       ],
     );
   }

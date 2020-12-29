@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:platzi_trips_app/description_place.dart';
 
+
 void main() {
   runApp(MyApp());
 }
