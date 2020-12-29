@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:platzi_trips_app/description_place.dart';
 import 'package:platzi_trips_app/gradient_back.dart';
 import 'package:platzi_trips_app/review_list.dart';
-import 'package:platzi_trips_app/card_image.dart';
+import 'package:platzi_trips_app/card_image_list.dart';
+import 'package:platzi_trips_app/header_appbar.dart';
 
 void main() {
   runApp(MyApp());
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Construyendo mi primera interfaz")
+           title: Text("Blogs")
         ),
         body: Stack(
           children: [
@@ -42,8 +43,9 @@ class MyApp extends StatelessWidget {
               new ReviewList()
             ]
           ),
-            GradientBack("Popular"),
-            CardImage("assets/img/beach.jpg")
+            // GradientBack("Popular"),
+            // CardImageList(),
+            HeaderAppBar()
         ]
         )
       )

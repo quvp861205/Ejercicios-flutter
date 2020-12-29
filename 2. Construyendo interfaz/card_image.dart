@@ -9,10 +9,10 @@ class CardImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final card = Container(
-      height: 250.0,
+      height: 300.0,
       width: 250.0,
       margin: EdgeInsets.only(
-        top: 60.0,
+        top: 50.0,
         left: 20.0
       ),
 
