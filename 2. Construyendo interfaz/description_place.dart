@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:platzi_trips_app/review_list.dart';
+
 
 class DescriptionPlace extends StatelessWidget {
 
@@ -100,8 +100,7 @@ class DescriptionPlace extends StatelessWidget {
 
         children: <Widget>[
         title_stars,
-        description,
-        new ReviewList()
+        description
 
       ],
     )
