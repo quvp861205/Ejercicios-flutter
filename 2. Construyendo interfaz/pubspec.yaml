@@ -55,6 +55,13 @@ flutter:
 
   assets:
     - assets/img/avatar.png
+    - assets/img/beach.jpg
+    - assets/img/mountain.jpg
+    - assets/img/snow.jpg
+    - assets/img/woman.jpg
+
+
+
 
   # To add assets to your application, add an assets section, like this:
   # assets:

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:platzi_trips_app/description_place.dart';
 import 'package:platzi_trips_app/gradient_back.dart';
 import 'package:platzi_trips_app/review_list.dart';
+import 'package:platzi_trips_app/card_image.dart';
 
 void main() {
   runApp(MyApp());
@@ -41,7 +42,8 @@ class MyApp extends StatelessWidget {
               new ReviewList()
             ]
           ),
-            GradientBack(),
+            GradientBack("Popular"),
+            CardImage("assets/img/beach.jpg")
         ]
         )
       )
