@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:platzi_trips_app/profile_trips.dart';
+import 'package:platzi_trips_app/profile/profile_trips.dart';
 import 'package:platzi_trips_app/search_trips.dart';
 
 import 'home_trips.dart'; //diseño estilo ios

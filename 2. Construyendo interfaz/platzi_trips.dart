@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_trips_app/profile_trips.dart';
+import 'package:platzi_trips_app/profile/profile_trips.dart';
 import 'package:platzi_trips_app/search_trips.dart';
 import 'home_trips.dart';
 import 'search_trips.dart';
-import 'profile_trips.dart';
+import 'profile/profile_trips.dart';
 
 
 class PlatziTrips extends StatefulWidget {
