@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:platzi_trips_app/description_place.dart';
 import 'package:platzi_trips_app/gradient_back.dart';
+import 'package:platzi_trips_app/platzi_trips_cupertino.dart';
 import 'package:platzi_trips_app/review_list.dart';
 import 'package:platzi_trips_app/card_image_list.dart';
 import 'package:platzi_trips_app/header_appbar.dart';
@@ -33,7 +34,9 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
         home: PlatziTrips() //Se agrega menu de navegacion inferior
-        /*
+        //home: PlatziTripsCupertino() //Menu navegacion estilo ios, semitransparente
+
+      /*
         *** Version anterior sin el menu de navegacion inferior
         home: Scaffold(
         appBar: AppBar(
