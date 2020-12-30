@@ -4,6 +4,7 @@ import 'package:platzi_trips_app/gradient_back.dart';
 import 'package:platzi_trips_app/review_list.dart';
 import 'package:platzi_trips_app/card_image_list.dart';
 import 'package:platzi_trips_app/header_appbar.dart';
+import 'package:platzi_trips_app/platzi_trips.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,7 +32,10 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Scaffold(
+        home: PlatziTrips() //Se agrega menu de navegacion inferior
+        /*
+        *** Version anterior sin el menu de navegacion inferior
+        home: Scaffold(
         appBar: AppBar(
            title: Text("Blogs")
         ),
@@ -48,7 +52,7 @@ class MyApp extends StatelessWidget {
             HeaderAppBar()
         ]
         )
-      )
+      )*/
     );
   }
 }
