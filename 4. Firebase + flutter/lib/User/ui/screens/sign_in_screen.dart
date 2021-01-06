@@ -35,10 +35,12 @@ class _SignInScreen extends State<SignInScreen> {
       // ignore: deprecated_member_use
       stream: userBloc.authStatus,
         builder: (BuildContext context, AsyncSnapshot snapshot) {
-          print("Entro en _handleCurrentSession ${snapshot}");
+
           if (snapshot.hasData) {
+            print("\n----- Esta autenticado correctamente -----  [${snapshot.data.displayName} ${snapshot.data.email}]\n");
             return PlatziTrips(); //Esta conectado
           } else if (snapshot.hasError) {
+            print("\n----- Ocurro un error durante el autenticado -----\n");
             return Text("Ocurrio un error en la transmision de datos");
           } else  if(!snapshot.hasData || snapshot.hasError) {
             return signInGoogleUI(); //no esta conectado
@@ -92,7 +94,7 @@ class _SignInScreen extends State<SignInScreen> {
               ButtonGreen(text:'Login with Google',
               onPressed: (){
                 userBloc.signIn().then(
-                    (User user)=>print('El usuario logueado es ${user.displayName}')
+                    (User user)=>print('\n----El usuario logueado es ${user.displayName}----')
                 );
               },
               width: 300.0,
