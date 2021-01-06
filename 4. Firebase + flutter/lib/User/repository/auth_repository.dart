@@ -6,4 +6,7 @@ class AuthRepository {
 
   // ignore: deprecated_member_use
   Future<User> signInFirebase() => _firebaseAuthAPI.signIn();
+
+  signOut() => _firebaseAuthAPI.signOut();
+
 }
