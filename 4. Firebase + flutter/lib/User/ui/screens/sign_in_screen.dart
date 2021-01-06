@@ -37,11 +37,11 @@ class _SignInScreen extends State<SignInScreen> {
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           print("Entro en _handleCurrentSession ${snapshot}");
           if (snapshot.hasData) {
-            return PlatziTrips();
+            return PlatziTrips(); //Esta conectado
           } else if (snapshot.hasError) {
             return Text("Ocurrio un error en la transmision de datos");
           } else  if(!snapshot.hasData || snapshot.hasError) {
-            return signInGoogleUI();
+            return signInGoogleUI(); //no esta conectado
           } else {
             return Container(
               color: Colors.white,
