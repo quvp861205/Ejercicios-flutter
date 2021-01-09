@@ -52,6 +52,7 @@ class GradientBackProfile extends StatelessWidget {
                 Icons.settings,
                 size: 15,
               ),
+              heroTag: null,
             ),
           ],
         ),

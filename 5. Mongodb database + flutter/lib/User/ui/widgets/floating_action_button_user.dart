@@ -32,6 +32,7 @@ class _FloatingActionButtonProfile extends State<FloatingActionButtonProfile> {
         child: Icon(
             Icons.bookmark_border
         ),
+        heroTag: null,
       ),
     );
 
@@ -49,6 +50,7 @@ class _FloatingActionButtonProfile extends State<FloatingActionButtonProfile> {
         child: Icon(
             Icons.tv
         ),
+        heroTag: null,
       ),
     );
 
@@ -66,6 +68,7 @@ class _FloatingActionButtonProfile extends State<FloatingActionButtonProfile> {
         child: Icon(
             Icons.add
         ),
+        heroTag: null,
       ),
     );
 
@@ -100,6 +103,7 @@ class _FloatingActionButtonProfile extends State<FloatingActionButtonProfile> {
         child: Icon(
             Icons.person
         ),
+        heroTag: null,
       ),
     );
 
