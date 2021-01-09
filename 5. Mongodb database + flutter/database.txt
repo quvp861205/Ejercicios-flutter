@@ -1,0 +1,25 @@
+users
+[
+	user
+	{
+		id: string,
+		name: string,
+		email: string,
+		photoUrl: string,
+		myFavoritePlaces: list,
+		myPlaces: list
+	}
+]
+
+Places
+[
+	place
+	{
+		id: string,
+		name: string,
+		description: string,
+		urlImage: string,
+		likes: int,
+		userOwner: string
+	}
+]
