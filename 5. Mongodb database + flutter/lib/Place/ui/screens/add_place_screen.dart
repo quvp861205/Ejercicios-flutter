@@ -1,7 +1,9 @@
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:platzi_trips_app/Place/ui/widgets/card_image.dart';
 import 'package:platzi_trips_app/Place/ui/widgets/title_input_location.dart';
+import 'package:platzi_trips_app/Widgets/button_purple.dart';
 import 'package:platzi_trips_app/Widgets/gradient_back.dart';
 import 'package:platzi_trips_app/Widgets/text_input.dart';
 import 'package:platzi_trips_app/Widgets/title_header.dart';
@@ -63,10 +65,17 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
                 child: ListView(
                   children: [
                     Container(  //AQUI VA LA FOTO
-
+                      alignment: Alignment.center,
+                      child: CardImageWithFabIcon(
+                        pathImage: "assets/img/mountain.jpg", //widget.image.path,
+                        iconData: Icons.camera_alt,
+                        width: 350.0,
+                        height: 250.0,
+                        left: 0
+                      )
                     ),
                     Container( //AQUI VA EL TITULO
-                      margin: EdgeInsets.only(bottom: 20.0),
+                      margin: EdgeInsets.only(top:20.0, bottom: 20.0),
                       child: TextInput(
                         hintText: "Title",
                         inputType: null,
@@ -87,6 +96,19 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
                       child: TextInputLocation(
                         hintText: "Add Location",
                         iconData: Icons.location_on
+                      )
+                    ),
+
+                    Container(
+                      width: 70.0,
+                      child: ButtonPurple(
+                        buttonText: "Add Place",
+                        onPressed: () {
+                          //GUARDAR DATOS EN BD
+                          //URL
+                          //CLOUD FIRESTORE
+                          //PLACE, DESCRIPTION, URL, USEROWNER, LIKES
+                        },
                       )
                     )
                   ],

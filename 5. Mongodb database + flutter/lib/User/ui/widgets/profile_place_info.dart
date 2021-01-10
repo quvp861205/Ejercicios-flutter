@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:platzi_trips_app/Place/model/place.dart';
-import 'package:platzi_trips_app/widgets/floating_action_button_green.dart';
+import 'package:platzi_trips_app/Widgets/floating_action_button_green.dart';
+
 
 class ProfilePlaceInfo extends StatelessWidget {
 
@@ -90,7 +91,7 @@ class ProfilePlaceInfo extends StatelessWidget {
       alignment: Alignment(0.8, 1.25),
       children: <Widget>[
         card,
-        FloatingActionButtonGreen()
+        FloatingActionButtonGreen(onPressed: null, icon: Icons.favorite)
       ],
     );
   }

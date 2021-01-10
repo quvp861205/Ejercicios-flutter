@@ -135,7 +135,7 @@ class CardImageProfile extends StatelessWidget {
       alignment: Alignment(0.6,1.1),
       children: [
         card,
-        FloatingActionButtonGreen()//Mandamos llamar nuestro metodo que viene de la clase exportada floating_action_button_green
+        FloatingActionButtonGreen(icon: Icons.add_rounded, onPressed: null)//Mandamos llamar nuestro metodo que viene de la clase exportada floating_action_button_green
       ],
     );
   }
