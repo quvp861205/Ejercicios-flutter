@@ -1,8 +1,11 @@
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:platzi_trips_app/Place/model/place.dart';
 import 'package:platzi_trips_app/Place/ui/widgets/card_image.dart';
 import 'package:platzi_trips_app/Place/ui/widgets/title_input_location.dart';
+import 'package:platzi_trips_app/User/bloc/bloc_user.dart';
 import 'package:platzi_trips_app/Widgets/button_purple.dart';
 import 'package:platzi_trips_app/Widgets/gradient_back.dart';
 import 'package:platzi_trips_app/Widgets/text_input.dart';
@@ -21,12 +24,16 @@ class AddPlaceScreen extends StatefulWidget {
 
 class _AddPlaceScreen extends State<AddPlaceScreen> {
 
+
   @override
   Widget build(BuildContext context) {
+
     double screenWidth = MediaQuery.of(context).size.width;
 
     final _controllerTitlePlace = TextEditingController();
     final _controllerDescriptionPlace = TextEditingController();
+
+    UserBloc userBloc = BlocProvider.of<UserBloc>(context);
 
     return Scaffold(
       body: Stack(
@@ -88,7 +95,7 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
                         hintText: "Description",
                         inputType: TextInputType.multiline,
                         maxLines: 4,
-                        controller: _controllerTitlePlace
+                        controller: _controllerDescriptionPlace
                     ),
 
                     Container(
@@ -108,6 +115,19 @@ class _AddPlaceScreen extends State<AddPlaceScreen> {
                           //URL
                           //CLOUD FIRESTORE
                           //PLACE, DESCRIPTION, URL, USEROWNER, LIKES
+                          userBloc.updatePlaceDataMongo(Place(
+                            name: _controllerTitlePlace.text,
+                            description: _controllerDescriptionPlace.text,
+                            likes: 0, uriImage: null
+                          )).then((bool error) {
+                            if( !error ) {
+                              print("======Termino de guardar el nuevo lugar======");
+                              Navigator.pop(context);
+                            } else {
+                              print("=====Hubo un error======");
+                            }
+
+                          });
                         },
                       )
                     )

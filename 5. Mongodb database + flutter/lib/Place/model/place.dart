@@ -7,8 +7,18 @@ class Place {
   String description;
   String uriImage;
   int likes;
+  String userOwner;
 
-  User userOwner;
+  toJson() {
+    return {
+      "id": this.id,
+      "name": this.name,
+      "description": this.description,
+      "uriImage": this.uriImage,
+      "likes": this.likes,
+      "userOwner": this.userOwner
+    };
+  }
 
   Place({
     Key key,
