@@ -3,7 +3,6 @@ import 'package:platzi_trips_app/Place/model/place.dart';
 
 class User {
 
-  final String provider;
   final String uid;
   final String name;
   final String email;
@@ -13,7 +12,6 @@ class User {
 
   User({
     Key key,
-    @required this.provider,
     @required this.uid,
     @required this.name,
     @required this.email,
@@ -25,7 +23,6 @@ class User {
 
   toJson() {
     return {
-      "provider": this.provider,
       "uid": this.uid,
       "name": this.name,
       "email": this.email,

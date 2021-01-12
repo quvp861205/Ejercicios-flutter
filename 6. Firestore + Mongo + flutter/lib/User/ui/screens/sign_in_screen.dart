@@ -110,7 +110,6 @@ class _SignInScreen extends State<SignInScreen> {
 
                       //Agregamos el usuario logueado a mongodb
                       userBloc.updateUserDataMongo(ModelUser.User(
-                        provider: "google",
                         uid: user.uid,
                         name: user.displayName,
                         email: user.email,

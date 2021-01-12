@@ -53,7 +53,7 @@ class UserBloc implements Bloc {
 
   //6. Obtener lugares  de un usuario en especifico
  getPlacesUserMongo() => _cloudMongoRepository.getPlacesUserMongo();
- getPlacesUserMongo2() => _cloudMongoRepository.getPlacesUserMongo2();
+ getAllPlacesMongo() => _cloudMongoRepository.getAllPlacesMongo();
 
   @override
   void dispose() {

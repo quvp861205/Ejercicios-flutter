@@ -17,8 +17,8 @@ class CloudMongoRepository {
     return _cloudMongoAPI.getPlacesUserMongo();
   }
 
-  getPlacesUserMongo2() {
-    return _cloudMongoAPI.getPlacesUserMongo2();
+  getAllPlacesMongo() {
+    return _cloudMongoAPI.getAllPlacesMongo();
   }
 
 

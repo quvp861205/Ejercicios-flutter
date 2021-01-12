@@ -72,11 +72,36 @@ class CloudMongoAPI {
     await  db.close();
 
     return list;
-//{_id: ObjectId("5ffcccca0155b08b5acf941f"), id: null, name: eee, description: rrr, uriImage: QHDlsmS2OublM5LL6oKDgEDKMy72/2021-01-11 22:10:14.858573.jpg, likes: 0, userOwner: users/QHDlsmS2OublM5LL6oKDgEDKMy72}
+
   }
 
-  List<Place> getPlacesUserMongo2() {
-    return this.tmp;
+  Future getAllPlacesMongo() async {
+
+    print("--------Obtener todos lugares de todos los usuarios--------");
+    await db.open();
+    var result = await db.collection(PLACES).find().toList();
+
+    List<Place> list = new List<Place>();
+    for(var i=0; i<result.length; i++) {
+
+      list.add(Place(
+          description: result[i]["description"],
+          likes: result[i]["likes"],
+          name: result[i]["name"],
+          uriImage: result[i]["uriImage"]
+      ));
+    }
+
+
+
+    this.tmp = list;
+
+    print("Lista de todos los lugares: ${this.tmp}");
+
+    await  db.close();
+
+    return list;
+
   }
 
 

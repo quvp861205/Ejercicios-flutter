@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:platzi_trips_app/User/model/user.dart';
+import 'package:platzi_trips_app/User/model/user.dart' as model;
 import 'dart:io' show Platform;
 
 //"mongodb+srv://cluster0.gwwsm.mongodb.net/<dbname>" --username pedro
@@ -14,14 +14,13 @@ class CloudFirestoreAPI {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
 
   //Registra un usuario
-  Future<void> updateUserData(User user) {
+  Future<void> updateUserData(model.User user) {
 
    DocumentReference ref = _db.collection(USERS).doc(user.uid);
     print('----Grabando un user: ${user}-----');
 
     return ref.set({
       'uid': user.uid,
-      'auth.uid': user.uid,
       'name': user.name,
       'email': user.email,
       'photoURL': user.photoURL,

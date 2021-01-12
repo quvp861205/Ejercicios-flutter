@@ -36,44 +36,33 @@ class ProfilePlacesList extends StatelessWidget {
       children: [FutureBuilder(
         future: userBloc.getPlacesUserMongo(),
         builder: (BuildContext context, AsyncSnapshot snapshot) {
-
+          print("Mostrando lugares de usuario ${snapshot.data}");
           if( snapshot.data==null ){
             return Container(
               child: Center(
-                child: Text("Loading....")
+                child: CircularProgressIndicator()
               )
             );
           }
-          return ListView.builder(
-            shrinkWrap: true,
-            itemCount: snapshot.data.length,
-            itemBuilder: (BuildContext context, int index){
-              return ProfilePlace(snapshot.data[index]);
+          return Container(
 
-            },
+            child: ListView.builder(
+              shrinkWrap: true,
+              addRepaintBoundaries: true,
+              itemCount: snapshot.data.length,
+              itemBuilder: (BuildContext context, int index){
+                return ProfilePlace(snapshot.data[index]);
+
+              }),
+
           );
+
 
         }
       )
       ])
     );
 
-/*
-      return Container(
-        margin: EdgeInsets.only(
-            top: 10.0,
-            left: 20.0,
-            right: 20.0,
-            bottom: 10.0
-        ),
-        child: Column(
-          children: [
-            ProfilePlace(place),
-            ProfilePlace(place2)
-          ]
-        ),
-
-    }*/
   }
 }
 
