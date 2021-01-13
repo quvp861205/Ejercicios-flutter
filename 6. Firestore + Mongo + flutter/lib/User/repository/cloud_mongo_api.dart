@@ -56,6 +56,7 @@ class CloudMongoAPI {
     for(var i=0; i<result.length; i++) {
 
       list.add(Place(
+          id: result[i]["_id"].toHexString(),
         description: result[i]["description"],
         likes: result[i]["likes"],
         name: result[i]["name"],
@@ -83,8 +84,8 @@ class CloudMongoAPI {
 
     List<Place> list = new List<Place>();
     for(var i=0; i<result.length; i++) {
-
       list.add(Place(
+          id: result[i]["_id"].toHexString(),
           description: result[i]["description"],
           likes: result[i]["likes"],
           name: result[i]["name"],
@@ -96,7 +97,7 @@ class CloudMongoAPI {
 
     this.tmp = list;
 
-    print("Lista de todos los lugares: ${this.tmp}");
+    print("Primer elemento: ${this.tmp[0].toJson()}");
 
     await  db.close();
 
@@ -104,5 +105,20 @@ class CloudMongoAPI {
 
   }
 
+  Future<String> setLikesPlacesMongo(String id, int likes) async {
+    String error;
+
+    try{
+      await db.open();
+      var result = await db.collection(PLACES).update(where.eq('_id',ObjectId.fromHexString(id)), modify.set('likes', likes));
+      await  db.close();
+    } catch(exc){
+      error = exc;
+    }
+
+    if( error!=null )
+    print("setLikesPlacesMongo ${error}");
+
+  }
 
 }

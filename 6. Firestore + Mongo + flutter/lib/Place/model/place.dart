@@ -8,6 +8,7 @@ class Place {
   String uriImage;
   int likes;
   String userOwner;
+  bool like = false;
 
   toJson() {
     return {

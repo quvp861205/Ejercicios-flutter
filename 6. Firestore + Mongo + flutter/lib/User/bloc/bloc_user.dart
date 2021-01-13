@@ -55,6 +55,8 @@ class UserBloc implements Bloc {
  getPlacesUserMongo() => _cloudMongoRepository.getPlacesUserMongo();
  getAllPlacesMongo() => _cloudMongoRepository.getAllPlacesMongo();
 
+  setLikesPlacesMongo(String id, int likes) => _cloudMongoRepository.setLikesPlacesMongo(id, likes);
+
   @override
   void dispose() {
     // TODO: implement dispose

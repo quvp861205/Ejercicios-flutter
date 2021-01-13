@@ -21,5 +21,7 @@ class CloudMongoRepository {
     return _cloudMongoAPI.getAllPlacesMongo();
   }
 
-
+  setLikesPlacesMongo(String id, int likes) {
+    return _cloudMongoAPI.setLikesPlacesMongo(id, likes);
+  }
 }

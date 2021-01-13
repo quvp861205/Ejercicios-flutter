@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/Pedro/AndroidStudioProjects/platzi_trips_app/lib/Widgets/floating_action_button_green.dart';
+import 'package:platzi_trips_app/Widgets/floating_action_button_green.dart';
 class CardImageWithFabIcon extends StatelessWidget {
 
   final String pathImage; // "assets/img/beach.jpg";
@@ -9,14 +9,15 @@ class CardImageWithFabIcon extends StatelessWidget {
   final double width;
   double left = 20.0;
   final VoidCallback onPressedFabIcon;
-  final IconData iconData;
+  final IconData iconData1, iconData2;
 
   CardImageWithFabIcon({Key key,
     @required this.pathImage,
     @required this.height,
     @required this.width,
     @required this.onPressedFabIcon,
-    @required this.iconData,
+    @required this.iconData1,
+    @required this.iconData2,
     this.left
   });
 
@@ -50,7 +51,7 @@ class CardImageWithFabIcon extends StatelessWidget {
       alignment: Alignment(0.9, 1.1),
       children: [
         card,
-        FloatingActionButtonGreen(icon: this.iconData, onPressed: onPressedFabIcon)
+        FloatingActionButtonGreen(icon1: this.iconData1, icon2: this.iconData2, onPressed: onPressedFabIcon)
       ],
     );
   }
